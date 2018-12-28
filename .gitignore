@@ -1,7 +1,6 @@
 src/mtaxi/settings/local.py
 local.py
 local.*
-src/mtaxi/settings/base.py
 
 db.sqlite3
 
