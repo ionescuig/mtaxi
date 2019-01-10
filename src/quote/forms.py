@@ -15,4 +15,5 @@ class QuoteForm(forms.ModelForm):
 
     class Meta:
         model = Quote
+        # fields = ['name']
         fields = '__all__'
