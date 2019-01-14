@@ -6,19 +6,73 @@ MTAXI | Quote
 {% endblock head_title %}
 
 {% block content %}
-<h1>Create Quote Page</h1>
+    <h1 class="text-center">Create Quote Page</h1>
+    <br><br>
 
     <form class="form media-body small pb-3 lh-125" method="POST">
         {% csrf_token %}
+        <ul>
+            <li class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-4">
+                    {{ form.name|as_crispy_field }}
+                </div>
+                <div class="col-sm-4">
+                    {{ form.pickup|as_crispy_field }}
+                </div>
+                <div class="col-sm-2"></div>
+            </li>
+
+            <li class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-4">
+                    {{ form.phone|as_crispy_field }}
+                </div>
+                <div class="col-sm-4">
+                    {{ form.dropoff|as_crispy_field }}
+                </div>
+                <div class="col-sm-2"></div>
+            </li>
+
+            <li class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-4">
+                    {{ form.email|as_crispy_field }}
+                </div>
+                <div class="col-sm-4">
+                    {{ form.quote_date|as_crispy_field }}
+                </div>
+                <div class="col-sm-2"></div>
+            </li>
+
+            <li class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-4">
+                    {{ form.passengers|as_crispy_field }}
+                </div>
+                <div class="col-sm-4">
+                    {{ form.quote_time|as_crispy_field }}
+                </div>
+                <div class="col-sm-2"></div>
+            </li>
+
+            <li class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+                    {{ form.notes|as_crispy_field }}
+                </div>
+                <div class="col-sm-2"></div>
+            </li>
+        </ul>
+
         <div class="row">
-             <div class="col-sm-6 ">
-                {{ form|crispy }}
+            <div class="col text-center">
+                <button class="btn btn-primary" type="submit">
+{#                        onclick="return confirm('Please confirm all the information is correct')">#}
+                    Send Quote
+                </button>
             </div>
         </div>
 
-
-
-{#        <button class="btn btn-primary" type="submit" onclick="return confirm('Are you sure?')">Submit</button>#}
-        <button class="btn btn-primary" type="submit">Submit</button>
     </form>
 {% endblock content %}
