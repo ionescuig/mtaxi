@@ -21,5 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', HomeView.as_view(), name='home'),
     path('quote/create', QuoteCreateView.as_view(), name='create'),
-    path('quote/verify', QuoteVerifyView.as_view(), name='verify')
+    path('quote/thankyou', ThankYouView.as_view(), name='thankyou')
 ]
