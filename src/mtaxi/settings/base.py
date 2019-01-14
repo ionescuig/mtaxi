@@ -122,3 +122,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+DEFAULT_FROM_EMAIL = 'gabriel.django.test@gmail.com'
+DEFAULT_TO_EMAIL = 'gabriel.django.test@gmail.com'

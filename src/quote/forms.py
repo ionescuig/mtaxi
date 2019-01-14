@@ -9,8 +9,10 @@ class QuoteForm(forms.ModelForm):
     passengers  = forms.IntegerField(label='Passengers', required=True, min_value=1, max_value=8, initial=1)
     pickup      = forms.CharField(label='Pickup Address', required=True)
     dropoff     = forms.CharField(label='Dropoff Address', required=True)
-    quote_date  = forms.DateField(label='Date', required=True, widget=forms.DateInput(attrs={'type': 'date'}))
-    quote_time  = forms.TimeField(label='Time', required=True, widget=forms.TimeInput(attrs={'type': 'time', 'step': '300'}))
+    quote_date  = forms.DateField(label='Date', required=True,
+                                  widget=forms.DateInput(attrs={'type': 'date'}))
+    quote_time  = forms.TimeField(label='Time', required=True,
+                                  widget=forms.TimeInput(attrs={'type': 'time', 'step': '300'}))
     notes       = forms.CharField(widget=forms.Textarea(attrs={'rows': '3'}), required=False)
 
     class Meta:
