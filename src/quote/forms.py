@@ -37,3 +37,10 @@ class QuoteForm(forms.ModelForm):
             del cleaned_data['phone']
 
         return cleaned_data
+
+    def save(self, commit=True):
+        quote = super(QuoteForm, self).save(commit=False)
+        if commit:
+            quote.save()
+            quote.send_email()
+        return quote

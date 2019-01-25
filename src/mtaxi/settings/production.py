@@ -124,5 +124,12 @@ STATIC_URL = '/static/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-DEFAULT_FROM_EMAIL = 'gabriel.django.test@gmail.com'
-DEFAULT_TO_EMAIL = 'gabriel.django.test@gmail.com'
+# gmail settings
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'you@email.com'
+EMAIL_HOST_PASSWORD = 'yourpassword'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+DEFAULT_FROM_EMAIL = 'Your Name <you@email.com>'
+DEFAULT_TO_EMAIL = 'To Email <to@email.com>'

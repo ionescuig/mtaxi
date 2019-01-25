@@ -2,9 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Mail Test</title>
 </head>
 <body>
-
+<h1>Testing: <em>send email</em></h1>
+<h4>New Quote</h4>
+<ol>
+    <li>Name: {{ name }}</li>
+    <li>Phone: {{ phone }}</li>
+    <li>Email: {{ email }}</li>
+    <li>Passengers: {{ passengers }}</li>
+    <li>Pickup: {{ pickup }}</li>
+    <li>Dropoff: {{ dropoff }}</li>
+    <li>Date: {{ quote_date|date:"D, d M Y" }}</li>
+    <li>Time: {{ quote_time|date:"H:i" }}</li>
+    <li>Notes: {{ notes }}</li>
+</ol>
 </body>
 </html>

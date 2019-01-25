@@ -21,9 +21,7 @@ class Quote(models.Model):
     def __str__(self):
         return str(self.quote_date) + ' / ' + self.quote_time.strftime('%H:%M')
 
-    def send_activation_email(self, base_url):
-        print("> Sending mail")
-
+    def send_email(self):
         template_name = 'quote/html_message.html'
         context = {'name': self.name,
                    'phone': self.phone,
@@ -36,18 +34,17 @@ class Quote(models.Model):
                    'notes': self.notes}
         html_content = render_to_string(template_name, context)
 
-        subject = 'New quote'
+        subject = 'MTAXI: New Quote'
         from_email = settings.DEFAULT_FROM_EMAIL
         message = ''
         recipient_list = [settings.DEFAULT_TO_EMAIL]
 
-        # Uncomment to send email. After setting the right email in base.py
-        # sent_mail = send_mail(
-        #     subject,
-        #     message,
-        #     from_email,
-        #     recipient_list,
-        #     fail_silently=False,
-        #     html_message=html_content
-        # )
+        sent_mail = send_mail(
+            subject,
+            message,
+            from_email,
+            recipient_list,
+            fail_silently=False,
+            html_message=html_content
+        )
         return sent_mail
