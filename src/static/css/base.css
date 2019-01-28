@@ -1,0 +1,32 @@
+body {
+    color: #fcc500;
+    background-color: #010101;
+}
+
+a {
+    color: #EB0002;
+}
+
+a:hover {
+    color: #F1CFA0;
+}
+
+.title {
+    color: #fcc500;
+}
+
+.title:hover {
+    color: #fcc500;
+}
+
+.btn-primary {
+    color: #010101;
+    background: #fcc500;
+    border-color: #fcc500;
+}
+
+.btn-primary:hover{
+    color: #010101;
+    background: #C77801;
+    border-color: #C77801;
+}

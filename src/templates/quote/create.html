@@ -5,74 +5,52 @@
 MTAXI | Quote
 {% endblock head_title %}
 
-{% block content %}
-    <h1 class="text-center">Create Quote Page</h1>
-    <br><br>
+{% block first-cell %}
+    <div class="container text-center" style="padding: 2em">
+        <a class="nav-link title" href="{% url 'home' %}">
+            <h1><strong>MTAXI LTD.</strong></h1>
+        </a>
+        <p style="color:#C77801">...a taxi appearing just when you need it!</p>
+        <br>
+        <h3>Bookings available</h3>
+    </div>
+{% endblock first-cell %}
 
+{% block merged-cell %}
     <form class="form media-body small pb-3 lh-125" method="POST">
         {% csrf_token %}
-        <ul>
-            <li class="row">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-4">
-                    {{ form.name|as_crispy_field }}
-                </div>
-                <div class="col-sm-4">
-                    {{ form.pickup|as_crispy_field }}
-                </div>
-                <div class="col-sm-2"></div>
-            </li>
-
-            <li class="row">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-4">
-                    {{ form.phone|as_crispy_field }}
-                </div>
-                <div class="col-sm-4">
-                    {{ form.dropoff|as_crispy_field }}
-                </div>
-                <div class="col-sm-2"></div>
-            </li>
-
-            <li class="row">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-4">
-                    {{ form.email|as_crispy_field }}
-                </div>
-                <div class="col-sm-4">
-                    {{ form.quote_date|as_crispy_field }}
-                </div>
-                <div class="col-sm-2"></div>
-            </li>
-
-            <li class="row">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-4">
-                    {{ form.passengers|as_crispy_field }}
-                </div>
-                <div class="col-sm-4">
-                    {{ form.quote_time|as_crispy_field }}
-                </div>
-                <div class="col-sm-2"></div>
-            </li>
-
-            <li class="row">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-8">
-                    {{ form.notes|as_crispy_field }}
-                </div>
-                <div class="col-sm-2"></div>
-            </li>
-        </ul>
-
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="list-unstyled">
+                    <li>{{ form.name|as_crispy_field }}</li>
+                    <li>{{ form.phone|as_crispy_field }}</li>
+                    <li>{{ form.email|as_crispy_field }}</li>
+                    <li>{{ form.passengers|as_crispy_field }}</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul class="list-unstyled">
+                    <li>{{ form.pickup|as_crispy_field }}</li>
+                    <li>{{ form.dropoff|as_crispy_field }}</li>
+                    <li>{{ form.quote_date|as_crispy_field }}</li>
+                    <li>{{ form.quote_time|as_crispy_field }}</li>
+                </ul>
+            </div>
+            <div class="col-md-12">
+                <ul class="list-unstyled">
+                    <li>{{ form.notes|as_crispy_field }}</li>
+                </ul>
+            </div>
+        </div>
+        <br>
         <div class="row">
             <div class="col text-center">
                 <button class="btn btn-primary" type="submit">
-{#                        onclick="return confirm('Please confirm all the information is correct')">#}
                     Send Quote
                 </button>
+                <a class="nav-link" href="{% url 'home' %}">Cancel quote</a>
             </div>
         </div>
 
     </form>
-{% endblock content %}
+{% endblock merged-cell %}

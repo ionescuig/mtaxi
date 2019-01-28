@@ -5,18 +5,69 @@
     <title>Mail Test</title>
 </head>
 <body>
-<h1>Testing: <em>send email</em></h1>
-<h4>New Quote</h4>
-<ol>
-    <li>Name: {{ name }}</li>
-    <li>Phone: {{ phone }}</li>
-    <li>Email: {{ email }}</li>
-    <li>Passengers: {{ passengers }}</li>
-    <li>Pickup: {{ pickup }}</li>
-    <li>Dropoff: {{ dropoff }}</li>
-    <li>Date: {{ quote_date|date:"D, d M Y" }}</li>
-    <li>Time: {{ quote_time|date:"H:i" }}</li>
-    <li>Notes: {{ notes }}</li>
-</ol>
+<h3>New Quote</h3>
+
+<table>
+    <tr>
+        <td>Name:</td>
+        <td><strong>{{ name }}</strong></td>
+    </tr>
+    <tr>
+        <td>Phone:</td>
+        <td><strong>{{ phone }}</strong></td>
+    </tr>
+    <tr>
+        <td>Email:</td>
+        <td><strong>{{ email }}</strong></td>
+    </tr>
+    <tr><td>---------</td></tr>
+    <tr>
+        <td>Date:</td>
+        <td><strong>{{ quote_date|date:"D, d M Y" }}</strong></td>
+    </tr>
+    <tr>
+        <td>Time:</td>
+        <td><strong>{{ quote_time|date:"H:i" }}</strong></td>
+    </tr>
+    <tr><td>---------</td></tr>
+    <tr>
+        <td>Passengers:</td>
+        <td><strong>{{ passengers }}</strong></td>
+    </tr>
+     <tr>
+        <td>Pickup:</td>
+        <td><strong>{{ pickup }}</strong></td>
+    </tr>
+     <tr>
+        <td>Dropoff:</td>
+        <td><strong>{{ dropoff }}</strong></td>
+    </tr>
+    <tr><td>---------</td></tr>
+     <tr>
+         <td>Notes:</td>
+         {% if notes %}
+            <td><strong>{{ notes }}</strong></td>
+         {% else %}
+             <td>No notes</td>
+         {% endif %}
+
+    </tr>
+</table>
+
+
+{#<ul>#}
+{#    <li>Name: {{ name }}</li>#}
+{#    <li>Phone: {{ phone }}</li>#}
+{#    <li>Email: {{ email }}</li>#}
+{#    <li></li>#}
+{#    <li>Date: {{ quote_date|date:"D, d M Y" }}</li>#}
+{#    <li>Time: {{ quote_time|date:"H:i" }}</li>#}
+{#    <li></li>#}
+{#    <li>Passengers: {{ passengers }}</li>#}
+{#    <li>Pickup: {{ pickup }}</li>#}
+{#    <li>Dropoff: {{ dropoff }}</li>#}
+{#    <li></li>#}
+{#    <li>Notes: {{ notes }}</li>#}
+{#</ul>#}
 </body>
 </html>

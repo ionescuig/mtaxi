@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html lang="en">
 
 <head>
@@ -11,17 +12,34 @@
             integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
             crossorigin="anonymous"></script>
 
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
     <title>{% block head_title %}MTAXI{% endblock head_title %}</title>
     {% block head %}{% endblock %}
 </head>
 
-<body style="background-color: #92a2b2">
-
-{% include 'snippets/nav.html' %}
+{#<body id="body" style="background-image: url('{% static "images/wallpaper.jpg"%}')">#}
+<body>
 
 {% block body %}
 <div class="container">
-    {% block content %}{% endblock content %}
+    <table align="center" width="100%" cellspacing="10">
+        <tr>
+            <td>
+				{% block first-cell %}{% endblock first-cell %}
+			</td>
+			<td rowspan=2 valign="center">
+				{% block merged-cell %}{% endblock merged-cell %}
+			</td>
+		</tr>
+		<tr>
+			<td width="50%">
+                <img style="display:block;" width="100%" src="{% static "images/taxi.jpg"%}" alt="taxi.jpg">
+			</td>
+		</tr>
+
+    </table>
 </div>
 {% endblock %}
 

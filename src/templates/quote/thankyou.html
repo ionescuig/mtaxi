@@ -4,7 +4,29 @@
 MTAXI | Thank You
 {% endblock head_title %}
 
-{% block content %}
-    <h1>Thank You Page</h1>
-    <p>Thank you for making a quote with us</p>
-{% endblock content %}
+{% block first-cell %}
+    <div class="container text-center" style="padding: 2em">
+        <a class="nav-link title" href="{% url 'home' %}">
+            <h1><strong>MTAXI LTD.</strong></h1>
+        </a>
+        <p style="color:#C77801">...a taxi appearing just when you need it!</p>
+    </div>
+{% endblock first-cell %}
+
+{% block merged-cell %}
+    <div class="container text-center" style="padding: 2em">
+        <h1><strong>Thank You</strong></h1>
+        <p style="color:#C77801">for your quote!</p>
+    </div>
+
+    <div class="container text-center" style="color: #F9DEAD; padding: 2em">
+        <p>Your quote has been successfully received.
+            <br>Please allow us up to 24h to come back to you.</p>
+        <br>
+        <p>Please do not hesitate to give us a call if you need a faster response.</p>
+    </div>
+
+    <div class="container text-center">
+        <a class="nav-link" href="{% url 'home' %}">Home</a>
+    </div>
+{% endblock merged-cell%}
