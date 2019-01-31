@@ -19,14 +19,20 @@ a:hover {
     color: #fcc500;
 }
 
-.btn-primary {
+.btn-warning {
     color: #010101;
     background: #fcc500;
     border-color: #fcc500;
 }
 
-.btn-primary:hover{
+.btn-warning:hover {
     color: #010101;
     background: #C77801;
     border-color: #C77801;
+}
+
+.btn-warning:active {
+    color: #010101;
+    background: #F9DEAD;
+    border-color: #F9DEAD;
 }

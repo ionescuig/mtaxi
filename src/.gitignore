@@ -5,9 +5,9 @@ local.*
 db.sqlite3
 
 venv/
-staticfiles/
 __pycache__/
 .idea/
 
 *.pyc
 *.key
+*.py[cod]

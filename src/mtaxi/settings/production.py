@@ -22,12 +22,12 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'mwg*0e9vq4klo9k6s2m$0hy6tehsm0$0*tke)302vmxhagz2*'
+SECRET_KEY = os.environ.get('SECRET_KEY', '0909i8i*0e9vq4klo9k6s2m$0hy6tehsm0$0*tke)30(.io££)xhagz2*')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mtaxi.herokuapp.com', '.mtaxiplymouth.ml']
 
 
 # Application definition
@@ -84,6 +84,11 @@ DATABASES = {
     }
 }
 
+# For heroku
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+DATABASES['default']['CONN_MAX_AGE'] = 500
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -129,10 +134,20 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # gmail settings
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'you@email.com'
-EMAIL_HOST_PASSWORD = 'yourpassword'
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-DEFAULT_FROM_EMAIL = 'Your Name <you@email.com>'
-DEFAULT_TO_EMAIL = 'To Email <to@email.com>'
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
+DEFAULT_TO_EMAIL = os.environ.get('DEFAULT_TO_EMAIL')
+
+CORS_REPLACE_HTTPS_REFERER      = True
+HOST_SCHEME                     = "https://"
+SECURE_PROXY_SSL_HEADER         = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT             = True
+SESSION_COOKIE_SECURE           = True
+CSRF_COOKIE_SECURE              = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS  = True
+SECURE_HSTS_SECONDS             = 1000000
+SECURE_FRAME_DENY               = True
