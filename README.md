@@ -46,8 +46,8 @@ ALLOWED_HOSTS = []
 EMAIL_HOST_USER = 'your_email'
 EMAIL_HOST_PASSWORD = 'your_password'
 
-DEFAULT_FROM_EMAIL = 'your_email'
-DEFAULT_TO_EMAIL = 'your_password'
+DEFAULT_FROM_EMAIL = 'from_email'
+DEFAULT_TO_EMAIL = 'to_password'
 
 CORS_REPLACE_HTTPS_REFERER      = False
 HOST_SCHEME                     = "http://"
