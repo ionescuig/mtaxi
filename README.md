@@ -69,3 +69,12 @@ python manage.py runserver
 ```
 
 From here you can modify the templates (or anything you want) with your details (company name, phone number, email address, ...).
+
+The project is ready for heroku, just modify `ALLOWED_HOSTS` in `production.py` and after setting the heroku project (a tutorial is out of scope) add Heroku Environment Variables for Django keys:
+```
+heroku config:set SECRET_KEY=<your-django-secret-key>
+heroku config:set EMAIL_HOST_USER='your_email'
+heroku config:set EMAIL_HOST_PASSWORD='your_password'
+heroku config:set DEFAULT_FROM_EMAIL='from_email'
+heroku config:set DEFAULT_TO_EMAIL='to_email'
+```
