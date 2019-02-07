@@ -47,7 +47,7 @@ EMAIL_HOST_USER = 'your_email'
 EMAIL_HOST_PASSWORD = 'your_password'
 
 DEFAULT_FROM_EMAIL = 'from_email'
-DEFAULT_TO_EMAIL = 'to_password'
+DEFAULT_TO_EMAIL = 'to_email'
 
 CORS_REPLACE_HTTPS_REFERER      = False
 HOST_SCHEME                     = "http://"
