@@ -1,7 +1,22 @@
 # MTAXI website
-##### Website for a taxi company
 
-Hosted on https://mtaxi.herokuapp.com and *...official site in progress...*
+Hosted on: [official page](https://www.mtaxiltd.co.uk) and [heroku](https://mtaxi.herokuapp.com)
+
+
+Website for a taxi company:
+- landing page
+  - info about company and other details
+- quote page
+  - uses quote model
+    - different fields validation
+    - add quote to database
+    - send email from bot email to company's owner email
+- thank you page
+- admin page
+  - quote
+    - modified fields to display
+    - added filter
+    - added search
 
 ---
 
