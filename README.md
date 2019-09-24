@@ -1,16 +1,22 @@
 # MTAXI website
 
+[![Python Version](https://img.shields.io/badge/python-3.6-brightgreen.svg)](https://python.org)
+[![Django Version](https://img.shields.io/badge/django-2.1-brightgreen.svg)](https://djangoproject.com)
+
 Hosted on: [official page](https://www.mtaxiltd.co.uk) and [heroku](https://mtaxi.herokuapp.com)
 
 
-Website for a taxi company:
+Website for a small taxi company. Save quotes from customers and email them to the office.
+<br>Modified admin page for easier interaction.
+
+Pages:
 - landing page
   - info about company and other details
 - quote page
   - uses quote model
     - different fields validation
     - add quote to database
-    - send email from bot email to company's owner email
+    - send email from bot email to company's office
 - thank you page
 - admin page
   - quote

@@ -4,7 +4,11 @@ local.*
 
 db.sqlite3
 
+uenv/
 venv/
+wenv/
+
+.git*/
 staticfiles/
 __pycache__/
 .idea/
