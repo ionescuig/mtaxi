@@ -5,64 +5,49 @@
 MTAXI | Home
 {% endblock head_title %}
 
-{% block first-cell %}
-    <div class="container text-center" style="padding: 2em">
-        <h1><strong>MTAXI LTD.</strong></h1>
-        <p style="color:#C77801">...a taxi appearing just when you need it!</p>
-        <br>
-        <h4>07427 621683</h4>
-        <h4>mtaxiltd.plymouth@outlook.com</h4>
+{% block main %}
+    <div class="text-center">
+        <h3>Professional<br>Plymouth Taxi Service</h3>
+        <h3>Airport / Seaport Transfer</h3>
+        <h3>8 seater / wheelchair</h3>
     </div>
-{% endblock first-cell %}
+{% endblock %}
 
-{% block merged-cell %}
-    <div class="row">
-        <div class="col-lg-10 offset-lg-1">
-            <div class="text-center">
-                <h2>Professional<br>Plymouth Taxi Service</h2>
-                <br>
-                <h2>Airport / Seaport Transfer</h2>
-                <br>
-                <h2>8 seater / wheelchair</h2>
-                <br><br><br><br>
-            </div>
-            <table align="center" width="75%" cellspacing="10">
-                <tr>
-                    <td>Exeter Airport</td>
-                    <td align="right">From</td>
-                    <td align="right">£60</td>
-                </tr>
-                <tr>
-                    <td>Newquay Airport</td>
-                    <td align="right">From</td>
-                    <td align="right">£70</td>
-                </tr>
-                <tr>
-                    <td>Bristol Airport</td>
-                    <td align="right">From</td>
-                    <td align="right">£140</td>
-                </tr><tr>
-                    <td>Heathrow Airport</td>
-                    <td align="right">From</td>
-                    <td align="right">£260</td>
-                </tr>
-                <tr>
-                    <td>Gatwick Airport</td>
-                    <td align="right">From</td>
-                    <td align="right">£280</td>
-                </tr>
-            </table>
-            <br>
+{% block aside %}
+    <table>
+        <tr>
+            <td align="left">Exeter Airport</td>
+            <td align="right">From</td>
+            <td align="right">£60</td>
+        </tr>
+        <tr>
+            <td align="left">Newquay Airport</td>
+            <td align="right">From</td>
+            <td align="right">£70</td>
+        </tr>
+        <tr>
+            <td align="left">Bristol Airport</td>
+            <td align="right">From</td>
+            <td align="right">£140</td>
+        </tr><tr>
+            <td align="left">Heathrow Airport</td>
+            <td align="right">From</td>
+            <td align="right">£260</td>
+        </tr>
+        <tr>
+            <td align="left">Gatwick Airport</td>
+            <td align="right">From</td>
+            <td align="right">£280</td>
+        </tr>
+    </table>
+
             <p class="text-center">We also provide travel to any UK destination</p>
-            <div class="text-center">
-                <a class="btn btn-warning" href="{% url 'create' %}">Ask for a quote</a>
-            </div>
-            <br><br><br><br><br>
-            <p align="center">
-                Card payments accepted
-                <img width="30%" src="{% static "images/card_pay.jpg" %}" alt="taxi.jpg">
-            </p>
-        </div>
-    </div>
 
-{% endblock merged-cell%}
+
+
+
+
+    <div class="text-center">
+        <a class="btn btn-warning" href="{% url 'create' %}">Ask for a quote</a>
+    </div>
+{% endblock %}

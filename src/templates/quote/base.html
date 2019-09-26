@@ -4,6 +4,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--Bootstrap 4.1.3-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
@@ -24,24 +25,36 @@
 <body>
 
 {% block body %}
-<div class="container-fluid">
-    <br>
-    <table align="center" width="100%" cellspacing="10">
-        <tr>
-            <td class="align-top">
-				{% block first-cell %}{% endblock first-cell %}
-			</td>
-			<td rowspan=2 class="align-center">
-				{% block merged-cell %}{% endblock merged-cell %}
-			</td>
-		</tr>
-		<tr>
-			<td width="50%">
-                <img style="display:block;" width="100%" src="{% static "images/taxi.jpg"%}" alt="taxi.jpg">
-			</td>
-		</tr>
+<div class="container-grid">
+    <div class="title">
+        {% block title %}
+            <div class="row">
+                <div class="col-9 text-center">
+                    <h1>MTAXI LTD</h1>
+                    <p>... a taxi just when you need it!</p>
+                </div>
+                <div class="col-3">
+                    <img class="title-img" style="display:block;"
+                         src="{% static "images/taxi.jpg"%}" alt="taxi.jpg">
+                </div>
+            </div>
+        {% endblock title %}
+    </div>
 
-    </table>
+    <div class="main">{% block main %}{% endblock main %}</div>
+    <div class="aside">{% block aside %}{% endblock aside %}</div>
+
+    <div class="footer">
+        {% block footer %}
+            <p>Contact:</p>
+            <p>Tel: 07427 621683</p>
+            <p>Email: mtaxiltd.plymouth@outlook.com</p>
+            <p align="center">
+                Card payments accepted
+                <img width="100px" src="{% static "images/card_pay.jpg" %}" alt="card.jpg">
+            </p>
+        {% endblock footer %}
+    </div>
 </div>
 {% endblock %}
 

@@ -1,38 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     color: #fcc500;
     background-color: #010101;
 }
 
-a {
-    color: #EB0002;
-}
-
-a:hover {
-    color: #F1CFA0;
-}
+.container-grid {
+        width: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-gap: 0.5rem;
+        grid-template-areas:
+            "title"
+            "main"
+            "aside"
+            "footer";
+    }
 
 .title {
-    color: #fcc500;
+    grid-area: title;
+    width: 80%;
+    align-items: center;
+    margin-bottom: 2rem;
 }
 
-.title:hover {
-    color: #fcc500;
+.title h1 {
+    font-size: 2.5em;
+    font-weight: bolder;
 }
 
-.btn-warning {
-    color: #010101;
-    background: #fcc500;
-    border-color: #fcc500;
+.title p {
+    color:#C77801;
+    font-size: 1rem;
 }
 
-.btn-warning:hover {
-    color: #010101;
-    background: #C77801;
-    border-color: #C77801;
+.title img {
+    max-height: 100px;
 }
 
-.btn-warning:active {
-    color: #010101;
-    background: #F9DEAD;
-    border-color: #F9DEAD;
+.main {
+    grid-area: main;
+    margin-bottom: 2rem;
+}
+
+.main h3 {
+    font-size: 1.5em;
+    /*font-weight: bolder;*/
+}
+
+.aside {
+    grid-area: aside;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    width: 75%;
+    mso-cellspacing: 0.5rem;
+}
+
+.footer {
+    color:#C77801;
+    grid-area: footer;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.footer p {
+    text-align: center;
+    margin-bottom: .25rem;
+}
+
+.footer p:last-child {
+    font-size: 0.75em;
+    margin-top: 0.5rem;
+}
+
+@media screen and (max-width: 375px) {
+    .title p {
+        font-size: .85rem;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .container-grid {
+        width: 80%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 0.5rem;
+        grid-template-areas:
+            "title title"
+            "main aside"
+            "footer footer";
+    }
+
+    .title {
+        margin-top: 2rem;
+        margin-bottom: 7rem;
+    }
+
+    .footer {
+        margin-top: 7rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    body {
+        font-size: 1.25rem;
+    }
+
+    .title {
+        margin-top: 3rem;
+        margin-bottom: 10rem;
+    }
+
+    .title img {
+        max-height: 125px;
+    }
+
+    .footer {
+        margin-top: 10rem;
+    }
 }
