@@ -21,25 +21,24 @@
     {% block head %}{% endblock %}
 </head>
 
-{#<body id="body" style="background-image: url('{% static "images/wallpaper.jpg"%}')">#}
 <body>
 
 {% block body %}
 <div class="container-grid">
     <div class="title">
         {% block title %}
-            <div class="row">
-                <div class="col-9 text-center">
-                    <h1>MTAXI LTD</h1>
-                    <p>... a taxi just when you need it!</p>
-                </div>
-                <div class="col-3">
-                    <img class="title-img" style="display:block;"
-                         src="{% static "images/taxi.jpg"%}" alt="taxi.jpg">
-                </div>
-            </div>
+            <h1>MTAXI LTD</h1>
+            <p>... a taxi just when you need it!</p>
         {% endblock title %}
     </div>
+
+    <div class="title-img">
+        {% block title_img %}
+            <img class="title-img" style="display:block;"
+                 src="{% static "images/taxi.jpg"%}" alt="taxi.jpg">
+        {% endblock title_img %}
+    </div>
+
 
     <div class="main">{% block main %}{% endblock main %}</div>
     <div class="aside">{% block aside %}{% endblock aside %}</div>
