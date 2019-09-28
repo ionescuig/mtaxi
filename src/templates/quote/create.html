@@ -1,22 +1,16 @@
 {% extends 'quote/base.html' %}
+{% load static %}
 {% load crispy_forms_tags %}
 
 {% block head_title %}
 MTAXI | Quote
 {% endblock head_title %}
 
-{% block first-cell %}
-    <div class="container text-center" style="padding: 2em">
-        <a class="nav-link title" href="{% url 'home' %}">
-            <h1><strong>MTAXI LTD.</strong></h1>
-        </a>
-        <p style="color:#C77801">...a taxi appearing just when you need it!</p>
-        <br>
-        <h3>Bookings available</h3>
-    </div>
-{% endblock first-cell %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/create.css' %}">
+{% endblock %}
 
-{% block merged-cell %}
+{% block main %}
     <form class="form media-body small pb-3 lh-125" method="POST">
         {% csrf_token %}
         <div class="row">
@@ -53,4 +47,4 @@ MTAXI | Quote
         </div>
 
     </form>
-{% endblock merged-cell %}
+{% endblock main %}

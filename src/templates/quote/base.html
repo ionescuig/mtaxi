@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% load staticfiles %}
+{% load static %}
 <html lang="en">
 
 <head>
@@ -27,7 +27,7 @@
 <div class="container-grid">
     <div class="title">
         {% block title %}
-            <h1>MTAXI LTD</h1>
+            <h1><a href="{% url 'home' %}">MTAXI LTD</a></h1>
             <p>... a taxi just when you need it!</p>
         {% endblock title %}
     </div>

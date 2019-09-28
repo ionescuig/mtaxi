@@ -8,6 +8,23 @@ body {
     background-color: #010101;
 }
 
+a {
+    color: #EB0002;
+}
+
+a:focus {
+    outline: none;
+}
+
+h1 a {
+    color: #fcc500;
+}
+
+a:hover {
+    color:#C77801;
+    text-decoration: none;
+}
+
 .container-grid {
     width: 100%;
     margin: 0 auto;
