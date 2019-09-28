@@ -1,31 +1,20 @@
 {% extends 'quote/base.html' %}
+{% load static %}
 
 {% block head_title %}
 MTAXI | Thank You
 {% endblock head_title %}
 
-{% block first-cell %}
-    <div class="container text-center" style="padding: 2em">
-        <a class="nav-link title" href="{% url 'home' %}">
-            <h1><strong>MTAXI LTD.</strong></h1>
-        </a>
-        <p style="color:#C77801">...a taxi appearing just when you need it!</p>
-    </div>
-{% endblock first-cell %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/thankyou.css' %}">
+{% endblock %}
 
-{% block merged-cell %}
-    <div class="container text-center" style="padding: 2em">
-        <h1><strong>Thank You</strong></h1>
-        <p style="color:#C77801">for your quote!</p>
-    </div>
-
-    <div class="container text-center" style="color: #F9DEAD; padding: 2em">
-        <p>Your quote has been successfully received.</p>
-        <br>
-        <p>Please do not hesitate to give us a call if you need a fast response.</p>
-    </div>
-
-    <div class="container text-center">
-        <a class="nav-link" href="{% url 'home' %}">Home</a>
-    </div>
-{% endblock merged-cell%}
+{% block main %}
+    <h2>Thank You</h2>
+    <p style="color:#C77801">for your quote!</p>
+    <br>
+    <p>Your quote has been successfully received.</p>
+    <p>Please do not hesitate to give us a call if you need a fast response.</p>
+    <br>
+    <a class="nav-link" href="{% url 'home' %}">Home</a>
+{% endblock main %}
