@@ -1,0 +1,29 @@
+.main {
+    text-align: center;
+    justify-self: center;
+    width: 90%;
+    margin-top: 1rem;
+}
+
+.footer {
+    margin-top: 5rem;
+}
+
+@media screen and (min-width: 800px) {
+    .container-grid {
+        grid-template-areas:
+            "title main"
+            "title-img main"
+            "footer footer";
+    }
+
+    .main {
+        margin-top: 7rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .main {
+        margin-top: 12rem;
+    }
+}
